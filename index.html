@@ -57,6 +57,15 @@
             background-color: #555;
         }
 
+        #fontColorPicker {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 35px;
+            left: 40%;
+            transform: translateX(-50%);
+        }
+
         
     </style>
 </head>
@@ -68,6 +77,8 @@
         <button id="boldBtn"><img src="Resources\bold.png" alt="Bold" height="25px" width="25px"></button>
         <button id="underlineBtn"><img src="Resources\underline.png" alt="Underline" height="30px" width="40px"></button>
         <button id="italicBtn"><img src="Resources\italic.png" alt="Italic" height="25px" width="25px"></button>
+        <button id="colorPickerBtn"><img src="Resources\color.png" alt="Color" height="28px" width="28px"></button>
+        <input type="color" id="fontColorPicker" oninput="formatDoc('foreColor', this.value); this.value='#000000';">
 
       
     </div>
@@ -97,6 +108,19 @@
         document.getElementById('italicBtn').addEventListener('click', italicText);
         function italicText() {
             document.execCommand('italic');
+        }
+
+        document.getElementById('colorPickerBtn').addEventListener('click', showColorPicker);
+        function showColorPicker() {
+            document.getElementById('fontColorPicker').click();
+        }
+
+        function formatDoc(cmd, value = null) {
+            if (value) {
+                document.execCommand(cmd, false, value);
+            } else {
+                document.execCommand(cmd);
+            }
         }
       
 
