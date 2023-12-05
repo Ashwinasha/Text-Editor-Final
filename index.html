@@ -83,7 +83,8 @@
         <button id="alignCenterBtn"><img src="Resources\center.png" alt="Align Center" height="25px" width="25px"></button>
         <button id="alignRightBtn"><img src="Resources\right.png" alt="Align Right" height="25px" width="25px"></button>
         <button id="alignJustifyBtn"><img src="Resources\justify.png" alt="Justify" height="25px" width="25px"></button>
-
+        <button id="undoBtn"><img src="Resources\undo.png" alt="Undo" height="25px" width="25px"></button>
+        <button id="redoBtn"><img src="Resources\redo.png" alt="Redo" height="25px" width="25px"></button>
       
     </div>
 	
@@ -142,6 +143,13 @@
         function alignText(command) {
             document.execCommand(command);
         }
+
+        document.getElementById('undoBtn').addEventListener('click', function () {
+            formatDoc('undo')
+        });
+        document.getElementById('redoBtn').addEventListener('click', function () {
+            formatDoc('redo')
+        });
       
 
     </script>
