@@ -64,7 +64,8 @@
 <body>
 
     <div class="toolbar">
-
+        
+        <button id="boldBtn"><img src="Resources\bold.png" alt="Bold" height="25px" width="25px"></button>
 
       
     </div>
@@ -80,6 +81,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <script>
+
+        document.getElementById('boldBtn').addEventListener('click', boldText);
+        function boldText() {
+            document.execCommand('bold');
+        }
       
 
     </script>
