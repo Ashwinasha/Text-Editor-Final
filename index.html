@@ -67,6 +67,7 @@
         
         <button id="boldBtn"><img src="Resources\bold.png" alt="Bold" height="25px" width="25px"></button>
         <button id="underlineBtn"><img src="Resources\underline.png" alt="Underline" height="30px" width="40px"></button>
+        <button id="italicBtn"><img src="Resources\italic.png" alt="Italic" height="25px" width="25px"></button>
 
       
     </div>
@@ -93,6 +94,10 @@
             document.execCommand('underline');
         } 
 
+        document.getElementById('italicBtn').addEventListener('click', italicText);
+        function italicText() {
+            document.execCommand('italic');
+        }
       
 
     </script>
