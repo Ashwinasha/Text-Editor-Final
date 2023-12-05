@@ -79,6 +79,10 @@
         <button id="italicBtn"><img src="Resources\italic.png" alt="Italic" height="25px" width="25px"></button>
         <button id="colorPickerBtn"><img src="Resources\color.png" alt="Color" height="28px" width="28px"></button>
         <input type="color" id="fontColorPicker" oninput="formatDoc('foreColor', this.value); this.value='#000000';">
+        <button id="alignLeftBtn"><img src="Resources\left.png" alt="Align Left" height="25px" width="25px"></button>
+        <button id="alignCenterBtn"><img src="Resources\center.png" alt="Align Center" height="25px" width="25px"></button>
+        <button id="alignRightBtn"><img src="Resources\right.png" alt="Align Right" height="25px" width="25px"></button>
+        <button id="alignJustifyBtn"><img src="Resources\justify.png" alt="Justify" height="25px" width="25px"></button>
 
       
     </div>
@@ -121,6 +125,22 @@
             } else {
                 document.execCommand(cmd);
             }
+        }
+
+        document.getElementById('alignLeftBtn').addEventListener('click', function () {
+            alignText('justifyLeft')
+        });
+        document.getElementById('alignCenterBtn').addEventListener('click', function () {
+            alignText('justifyCenter')
+        });
+        document.getElementById('alignRightBtn').addEventListener('click', function () {
+            alignText('justifyRight')
+        });
+        document.getElementById('alignJustifyBtn').addEventListener('click', function () {
+            alignText('justifyFull')
+        });
+        function alignText(command) {
+            document.execCommand(command);
         }
       
 
